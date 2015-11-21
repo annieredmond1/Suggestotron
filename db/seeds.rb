@@ -5,3 +5,28 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+
+
+
+
+
+
+
+
+
+
+require 'ffaker' 
+
+Topic.destroy_all
+
+10.times do
+	topic_params = Hash.new
+	topic_params[:author] = FFaker::Name.first_name
+	topic_params[:title] = FFaker::Product
+	topic_params[:description] = FFaker::String
+	new_topic = Topic.create(topic_params)
+end
+
+
+
